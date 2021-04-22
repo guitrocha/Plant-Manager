@@ -1,6 +1,15 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TextInput, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import {    StyleSheet, 
+            View, 
+            Text, 
+            TextInput, 
+            KeyboardAvoidingView, 
+            Platform, 
+            TouchableWithoutFeedback, 
+            Keyboard, 
+            Alert } 
+        from 'react-native'
 
 import { Button } from '../components/Button';
 
@@ -14,6 +23,9 @@ export function UserIdentification(){
     const navigation = useNavigation();
 
     function handleSubmit(){
+        if(!name)
+            return Alert.alert('Me diz como chamar você 😥');
+
         navigation.navigate('Confirmation');
     }
 
